@@ -1,4 +1,26 @@
-This branch is a thought for testing protomaps with tauri. It is not working at the moment. 
+### Installation
+
+```bash
+npm install
+```
+
+Then run with 
+
+```bash
+npm run build; npm run tauri dev
+```
+
+### Info
+
+
+This branch is a thought for testing protomaps with tauri. Most things are working: 
+- frontend bundling with webpack
+- tauri backend handling the remote file download to AppData
+- the frontend that can request data from the AppData folder
+
+Only protomaps local pmtiles cannot be displayed yet.
+
+---
 
 As tauri2 offers two potential ways where the pmtiles file could be stored, either in assets or on $AppData, only accessible through the Rust backend, the range requests that he frontend main.js fires need to be served by a compatible server. Apparently the pmtiles:// protocol is not supported yet, neither for assets nor by default through the Rust backend. 
 
@@ -25,6 +47,6 @@ if (fileExists) {
 
 ```
 
-When using the path to the user's AppData, with `"pmtiles://" + convertFileSrc(filePath) ` it's complaining about `Error: Cross origin requests are only supported for HTTP.`.
+- When using the path to the user's AppData, with `"pmtiles://" + convertFileSrc(filePath) ` it's complaining about `Error: Cross origin requests are only supported for HTTP.`.
 
-Instead, when copying the pmtiles file to the assets folder: `Server returned no content-length header or content-length exceeding request. Check that your storage backend supports HTTP Byte Serving.`
+- Instead, when copying the pmtiles file to the assets folder: `Server returned no content-length header or content-length exceeding request. Check that your storage backend supports HTTP Byte Serving.`

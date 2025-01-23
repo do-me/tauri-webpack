@@ -6,6 +6,7 @@ patterns = [
   "my_custom_folder/",
   "src-tauri/target/",
   "src-tauri/gen/schemas/",
+  "src/assets/style.json"
   # "src-tauri/"
 ]
 
